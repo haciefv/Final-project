@@ -13,7 +13,7 @@ import {
     AlertTitle,
     AlertDescription,
   } from '@chakra-ui/react'
-import TabItem from './TabItem';
+// import TabItems from './TabItems';
 import TextInputs from './PostForm/TextInputs';
 import ImageUpload from './PostForm/ImageUpload';
 import { Post } from '../../atoms/postsAtom';
@@ -23,11 +23,12 @@ import { addDoc, collection, serverTimestamp, Timestamp, updateDoc } from 'fireb
 import { firestore, storage } from '../../firebase/clientApp';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import useSelectFile from '../../hooks/useSelectFile';
-// import Tab from './TabItem';
+// import Tab from './TabItems';
 
 type NewPostFormProps = {
     user:User;
     communityImageURL?:string
+    mainTab: (value: string) => void;
     
 };
 const formTabs= [
@@ -41,7 +42,7 @@ const formTabs= [
     },
 
 ]
-export type TabItem = {
+export type TabItems = {
     title:string;
     icon: typeof Icon.arguments
 }
@@ -117,7 +118,42 @@ const NewPostForm:React.FC<NewPostFormProps> = ({user,communityImageURL}) => {
             direction="column" bg="white" borderRadius ={4} mt={2}>
             <Flex width="100%">
                 {formTabs.map((item)=>(
-                <TabItem key={item.title} item={item} selected={item.title===selectedTab} setSelectedTab={setSelectedTab} />
+               
+               
+               // <TabItems key={item.title} item={item} selected={item.title===selectedTab} setSelectedTab={setSelectedTab} />
+               
+               
+               
+               <Flex
+               justify="center"
+               align="center"
+               flexGrow={1}
+               p="14px 0px"
+               cursor="pointer"
+               fontWeight={700}
+               color={ "gray.500"}
+               borderWidth={  "0px 1px 1px 0px"}
+               borderBottomColor={ "gray.200"}
+               borderRightColor="gray.200"
+               _hover={{ bg: "gray.50" }}
+               onClick={() => setSelectedTab(item.title)}
+             >
+               <Flex align="center" height="20px" mr={2}>
+                 <Icon height="100%" as={item.icon} fontSize={18} />
+               </Flex>
+               <Text fontSize="10pt">{item.title}</Text>
+             </Flex>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
                ))} 
             </Flex>
             <Flex p={4}>
