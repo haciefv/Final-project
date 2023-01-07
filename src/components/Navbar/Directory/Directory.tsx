@@ -48,7 +48,7 @@ const UserMenu:React.FC = () => {
               <Icon 
               fontSize={24}
               mr={{base:1, md:2}}
-              as={directoryState.selectedMenuItem.Icon}
+              as={directoryState.selectedMenuItem.icon}
               color="green.400"  />
               
             )}

@@ -42,7 +42,7 @@ const useDirectory= () => {
                     displayText:`${currentCommunity.id}`,
                     link:`/r/${currentCommunity.id}`,
                     imageURL:currentCommunity.imageURL,
-                    Icon:RiTeamFill,
+                    icon:RiTeamFill,
                     iconColor:"blue.500"
                 },
 
