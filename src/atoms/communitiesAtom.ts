@@ -2,13 +2,13 @@ import { Timestamp } from "@google-cloud/firestore";
 import { atom } from "recoil";
 
 export interface Community {
-    id:string;
-    creatorId:string;
-    numberOfMembers:number;
-    privacyType:"public"|"restrictee"|"private";
-    createdAt?:Timestamp;
-    imageURL:string;
-}
+    id?: string;
+    creatorId: string;
+    numberOfMembers: number;
+    privacyType: "public" | "restrictied" | "private";
+    createdAt?: Timestamp;
+    imageURL?: string;
+  }
 export interface CommunitySnippet{
     communityId:string;
     isModerator?:boolean;

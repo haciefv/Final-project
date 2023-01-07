@@ -11,15 +11,18 @@ const useDirectory= () => {
     const router = useRouter()
     const communityStateValue = useRecoilValue(communityState)
 
-    const onSelectMenuItem = (menuItem: DirectoryMenuItem)=>{
-        setDirectoryState(prev =>({
-            ...prev,selectedMenuItem: menuItem
-        }))
-        router.push(menuItem.link)
-        if(directoryState.isOpen){
-            toggleMenuOpen()
+    const onSelectMenuItem = (menuItem: DirectoryMenuItem) => {
+        setDirectoryState((prev) => ({
+          ...prev,
+          selectedMenuItem: menuItem,
+        }));
+    
+        router?.push(menuItem.link);
+        if (directoryState.isOpen) {
+          toggleMenuOpen();
         }
-    };
+      };
+    
 
 
     const toggleMenuOpen =()=>{
