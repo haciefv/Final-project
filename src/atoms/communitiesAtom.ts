@@ -6,8 +6,8 @@ export interface Community {
     creatorId:string;
     numberOfMembers:number;
     privacyType:"public"|"restrictee"|"private";
-    cretedAt?:Timestamp;
-    imageURL?:string;
+    createdAt?:Timestamp;
+    imageURL:string;
 }
 export interface CommunitySnippet{
     communityId:string;

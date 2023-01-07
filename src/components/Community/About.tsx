@@ -74,14 +74,8 @@ const About: React.FC<AboutProps> = ({
       });
       console.log("HERE IS DOWNLOAD URL", downloadURL);
 
-      // April 24 - added state update
-      setCommunityStateValue((prev) => ({
-        ...prev,
-        currentCommunity: {
-          ...prev.currentCommunity,
-          imageURL: downloadURL,
-        }
-      }));
+
+      // setCommunityStateValue((prev)=({}))
     } catch (error: any) {
       console.log("updateImage error", error.message);
     }
