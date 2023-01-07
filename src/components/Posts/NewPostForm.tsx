@@ -13,7 +13,6 @@ import {
     AlertTitle,
     AlertDescription,
   } from '@chakra-ui/react'
-// import TabItems from './TabItems';
 import TextInputs from './PostForm/TextInputs';
 import ImageUpload from './PostForm/ImageUpload';
 import { Post } from '../../atoms/postsAtom';
