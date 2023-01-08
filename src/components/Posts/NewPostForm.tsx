@@ -27,7 +27,6 @@ import useSelectFile from '../../hooks/useSelectFile';
 type NewPostFormProps = {
     user:User;
     communityImageURL?:string
-    mainTab: (value: string) => void;
     
 };
 const formTabs= [
